@@ -145,6 +145,7 @@ abstract class VarHandleBaseTest {
         }
         message = message == null ? "" : message + ". ";
         assertNotNull(_e, String.format("%sNo throwable thrown. Expected %s", message, re));
+        if (!re.isInstance(_e)) _e.printStackTrace();
         assertTrue(re.isInstance(_e), String.format("%sIncorrect throwable thrown, %s. Expected %s", message, _e, re));
     }
 
